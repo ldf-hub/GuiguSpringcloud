@@ -1,0 +1,10 @@
+.idea/**
+hubei-rjyx-swim-pool-quality/target/**
+**.iml
+.classpath
+hubei-rjyx-swim-pool-quality/.project
+*.prefs
+hubei-rjyx-swim-pool-quality/src/main/resources/rebel.xml
+*.log
+
+**/target/**
