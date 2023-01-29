@@ -1,0 +1,6 @@
+server:
+  port: 80
+
+api:
+  paymentUrl: http://localhost:8001/
+

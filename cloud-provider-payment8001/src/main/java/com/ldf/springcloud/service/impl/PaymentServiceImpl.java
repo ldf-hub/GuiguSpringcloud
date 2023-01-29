@@ -1,6 +1,6 @@
 package com.ldf.springcloud.service.impl;
 
-import com.ldf.springcloud.entities.Payment;
+import entities.Payment;
 import com.ldf.springcloud.mapper.PaymentMapper;
 import com.ldf.springcloud.service.PaymentService;
 import org.springframework.stereotype.Service;

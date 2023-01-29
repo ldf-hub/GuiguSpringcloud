@@ -1,6 +1,6 @@
 package com.ldf.springcloud.service;
 
-import com.ldf.springcloud.entities.Payment;
+import entities.Payment;
 
 /**
  * @author ldf

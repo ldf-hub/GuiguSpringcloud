@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ldf.springcloud.mapper.PaymentMapper" >
-  <resultMap id="BaseResultMap" type="com.ldf.springcloud.entities.Payment" >
+  <resultMap id="BaseResultMap" type="entities.Payment" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="serial" property="serial" jdbcType="VARCHAR" />
   </resultMap>
@@ -18,11 +18,11 @@
     delete from payment
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ldf.springcloud.entities.Payment" >
+  <insert id="insert" parameterType="entities.Payment" >
     insert into payment (id, serial)
     values (#{id,jdbcType=BIGINT}, #{serial,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ldf.springcloud.entities.Payment" >
+  <insert id="insertSelective" parameterType="entities.Payment" >
     insert into payment
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ldf.springcloud.entities.Payment" >
+  <update id="updateByPrimaryKeySelective" parameterType="entities.Payment" >
     update payment
     <set >
       <if test="serial != null" >
@@ -50,7 +50,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ldf.springcloud.entities.Payment" >
+  <update id="updateByPrimaryKey" parameterType="entities.Payment" >
     update payment
     set serial = #{serial,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}

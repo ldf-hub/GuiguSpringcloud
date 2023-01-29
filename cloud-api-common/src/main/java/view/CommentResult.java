@@ -1,4 +1,4 @@
-package com.ldf.springcloud.view;
+package view;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +16,7 @@ public class CommentResult<T> {
     private String message;
     private T data;
 
-    public CommentResult(Integer code,String message){
+    public CommentResult(Integer code, String message){
         this(code,message,null);
     }
 }

@@ -1,8 +1,8 @@
 package com.ldf.springcloud.controller;
 
-import com.ldf.springcloud.entities.Payment;
+import entities.Payment;
+import view.CommentResult;
 import com.ldf.springcloud.service.PaymentService;
-import com.ldf.springcloud.view.CommentResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
