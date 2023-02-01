@@ -22,14 +22,12 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
-
     @GetMapping(value = "/{id}")
     public CommentResult get(@PathVariable("id") Long id) {
         Payment payment = paymentService.selectByPrimaryKey(id);
-
         log.info("******查找结果：serverPort:"+serverPort + payment);
         if (payment != null) {
-            return new CommentResult(200, "查找成功，serverPort:"+serverPort +  payment);
+            return new CommentResult(200, "查找成功，serverPort:"+serverPort + payment);
         } else {
             return new CommentResult(444, "没有对应的记录，查找id："+id, null);
 
