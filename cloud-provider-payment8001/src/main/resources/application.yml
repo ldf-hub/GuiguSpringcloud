@@ -27,3 +27,8 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/ #集群版
       #defaultZone: http://eureka7001.com:7001/eureka/ #单机版
+    instance:
+      #实例名称
+      instance-id: payment8001
+      #显示ip
+      prefer-ip-address: true
