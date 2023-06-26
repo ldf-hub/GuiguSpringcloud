@@ -28,8 +28,9 @@ public class OrderController {
 
     @Resource
     private RestTemplate restTemplate;
-    @Resource
-    private LoadBalancer loadBalancer;
+    // 自己的ribbon轮询器
+//    @Resource
+//    private LoadBalancer loadBalancer;
 
     @Resource
     DiscoveryClient discoveryClient;
@@ -43,17 +44,19 @@ public class OrderController {
     public CommentResult<Payment> create(@PathVariable("id") Long id) {
         return restTemplate.getForObject(PAYMENT_URL + "/payment/" + id, CommentResult.class);
     }
-    @GetMapping("payment/lb")
-    public String getPaymentLB() {
-
-        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
-        if(instances == null || instances.size() <=0){
-            return null;
-        }
-
-        ServiceInstance serviceInstance = loadBalancer.instances(instances);
-        URI uri = serviceInstance.getUri();
-        return restTemplate.getForObject(uri + "/payment/lb", String.class);
-
-    }
+    
+    // 用自己的轮询算法
+//    @GetMapping("payment/lb")
+//    public String getPaymentLB() {
+//
+//        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+//        if(instances == null || instances.size() <=0){
+//            return null;
+//        }
+//
+//        ServiceInstance serviceInstance = loadBalancer.instances(instances);
+//        URI uri = serviceInstance.getUri();
+//        return restTemplate.getForObject(uri + "/payment/lb", String.class);
+//
+//    }
 }

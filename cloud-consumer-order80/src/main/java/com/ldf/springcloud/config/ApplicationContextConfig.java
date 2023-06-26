@@ -3,6 +3,7 @@ package com.ldf.springcloud.config;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -18,5 +19,11 @@ public class ApplicationContextConfig {
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
+    // 不使用LoadBalanced就得自己整一个RestTemplate
+   /* @Primary
+    @Bean
+    public RestTemplate myLoadBalancedTemplate(){
+        return new RestTemplate();
+    }*/
 }
 
