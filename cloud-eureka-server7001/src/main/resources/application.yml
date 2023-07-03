@@ -2,15 +2,15 @@ server:
   port: 7001
 eureka:
   instance:
-    hostname: eureka7001.com #eureka服务端的实例名称
+    hostname: localhost #eureka服务端的实例名称
   client:
     #false表示不向注册中心注册自己。
     register-with-eureka: false
     #false表示自己端藏是注册中我的职员威是维护服务实例，并不需要去检索服务
     fetch-registry: false
-    service-url:
-      #没与EurekaServer交互的地址登询服务和注册服务都需要依赖这个地址。eureka集群靠这个配置
-      defaultZone: http://eureka7002.com:7002
+#    service-url:
+#      #没与EurekaServer交互的地址登询服务和注册服务都需要依赖这个地址。eureka集群靠这个配置
+#      defaultZone: http://eureka7002.com:7002/
   server:
     #自我保护开关
     enable-self-preservation: false

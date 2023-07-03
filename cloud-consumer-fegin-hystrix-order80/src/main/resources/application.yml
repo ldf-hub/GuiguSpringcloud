@@ -1,0 +1,30 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+feign:
+  client:
+    config:
+      default:
+        # 日志级别
+        loggerLevel: full
+        # 指的是建立连接所用的时间，适用于网络状态正常的情况下，两端连接所用的时间
+        ConnectTimeOut: 10000
+        # 指的是建立连接后从服务器读取可用资源所用的时间
+        ReadTimeOut: 10000
+# 这个配置可以不加， 默认超时时间1s会导致一直提示超时
+  hystrix:
+    enabled: true
+#单独设置hystrix的线程超时时间，避免服务一直被降级
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
