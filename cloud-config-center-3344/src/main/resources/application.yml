@@ -8,18 +8,21 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:ldf-hub/GuiguSpringcloud.git #GitHub上面的git仓库名字
+          uri: https://github.com/ldf-hub/springcloud-config.git #GitHub上面的git仓库名字
         ####搜索目录
           search-paths:
             - springcloud-config
+          username: 2124656026@qq.com
+          password: aa20010000
+          skip-ssl-validation: true
       ####读取分支
-      label: master
-#rabbitmq相关配置
-rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+      label: main
+##rabbitmq相关配置
+  rabbitmq:
+      host: 101.34.45.104
+      port: 5672
+      username: root
+      password: 123456
 
 #服务注册到eureka地址
 eureka:
@@ -27,7 +30,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:7001/eureka
 
-##rabbitmq相关配置,暴露bus刷新配置的端点
+###rabbitmq相关配置,暴露bus刷新配置的端点
 management:
   endpoints: #暴露bus刷新配置的端点
     web:
