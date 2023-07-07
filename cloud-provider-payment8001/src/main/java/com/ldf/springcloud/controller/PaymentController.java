@@ -95,12 +95,17 @@ public class PaymentController {
             return new CommentResult(200, "删除数据成功", result);
         } else {
             return new CommentResult(444, "删除数据失败", null);
-
         }
     }
 
     @GetMapping(value = "/lb")
     public String getPaymentLB() {
         return serverPort;
+    }
+
+    @GetMapping("/zipkin")
+    public String paymentZipkin()
+    {
+        return "hi ,i'am paymentzipkin server fall back，welcome to atguigu，O(∩_∩)O哈哈~";
     }
 }

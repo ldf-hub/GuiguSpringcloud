@@ -44,7 +44,7 @@ public class OrderController {
     public CommentResult<Payment> create(@PathVariable("id") Long id) {
         return restTemplate.getForObject(PAYMENT_URL + "/payment/" + id, CommentResult.class);
     }
-    
+
     // 用自己的轮询算法
 //    @GetMapping("payment/lb")
 //    public String getPaymentLB() {
@@ -59,4 +59,11 @@ public class OrderController {
 //        return restTemplate.getForObject(uri + "/payment/lb", String.class);
 //
 //    }
+    // ====================> zipkin+sleuth
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin()
+    {
+        String result = restTemplate.getForObject(PAYMENT_URL+"/payment/zipkin/", String.class);
+        return result;
+    }
 }
